@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Design tokens — literal values from the Portfolio Homepage design handoff. */
+:root {
+  --bg: #faf9f6;
+  --surface: #f2f0eb;
+  --card: #ffffff;
+  --primary: #7d8570;
+  --primary-hover: #6d7563;
+  --title: #26251f;
+  --body: #66645d;
+  --border: #e5e2da;
+  --accent: #cfc6ae;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-title: var(--title);
+  --color-body: var(--body);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+
+  --font-heading: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --container-page: 1200px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    color: var(--color-title);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
