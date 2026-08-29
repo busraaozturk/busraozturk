@@ -4,5 +4,7 @@ export const site = {
   email: "busrozturk13@gmail.com",
   github: "https://github.com/busraaozturk",
   linkedin: "https://www.linkedin.com/in/busraoozturk",
-  resumePdf: "/BusraOzturk-CV.pdf",
+  // GitHub Pages serves this project under the /busraozturk basePath (see next.config.ts).
+  // next/link auto-prefixes basePath, but this plain <a href> download link needs it inline.
+  resumePdf: "/busraozturk/BusraOzturk-CV.pdf",
 };
