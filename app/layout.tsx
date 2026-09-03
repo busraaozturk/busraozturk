@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Inter } from "next/font/google";
+import { Geist, Inter, Caveat } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const caveat = Caveat({ variable: "--font-caveat", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Büşra Öztürk — Frontend Developer",
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={`${geist.variable} ${inter.variable}`}>
+    <html lang="tr" className={`${geist.variable} ${inter.variable} ${caveat.variable}`}>
       <body className="flex min-h-screen flex-col bg-bg font-body text-body antialiased">
         {children}
       </body>

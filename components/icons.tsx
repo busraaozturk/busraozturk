@@ -90,6 +90,124 @@ export function CloseIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function GithubIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+    </svg>
+  );
+}
+
+export function FolderIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M3 6.5a1 1 0 0 1 1-1h4l1.6 1.8H20a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6.5Z" />
+    </Icon>
+  );
+}
+
+export function BookIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M12 6.5c-1.6-1.1-4-1.6-6-1.2V17c2 -.4 4.4.1 6 1.2" />
+      <path d="M12 6.5c1.6-1.1 4-1.6 6-1.2V17c-2-.4-4.4.1-6 1.2" />
+      <path d="M12 6.5V18.2" />
+    </Icon>
+  );
+}
+
+export function BranchIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <line x1="6" y1="4" x2="6" y2="14.5" />
+      <circle cx="6" cy="18" r="2.2" />
+      <circle cx="18" cy="6" r="2.2" />
+      <path d="M18 8.2a6 6 0 0 1-6 6h-2" />
+    </Icon>
+  );
+}
+
+export function BracesIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M8 4.5c-1.7 0-2.6.9-2.6 2.6v2.4c0 1-.5 1.5-1.4 1.5.9 0 1.4.5 1.4 1.5v2.4c0 1.7.9 2.6 2.6 2.6" />
+      <path d="M16 4.5c1.7 0 2.6.9 2.6 2.6v2.4c0 1 .5 1.5 1.4 1.5-.9 0-1.4.5-1.4 1.5v2.4c0 1.7-.9 2.6-2.6 2.6" />
+    </Icon>
+  );
+}
+
+export function SeedlingIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M12 21v-8.5" />
+      <path d="M12 13c0-4.2 3-6.5 7.5-6.5 0 4.2-3.3 7-7.5 6.5Z" />
+      <path d="M12 14c0-3.2-2.4-5.5-5.5-5.5-.3 3.1 2.1 5.8 5.5 5.5Z" />
+    </Icon>
+  );
+}
+
+export function StarIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M12 4.2 14 8.7l5 .6-3.7 3.4.9 4.9L12 15.2l-4.2 2.4.9-4.9-3.7-3.4 5-.6Z" />
+    </Icon>
+  );
+}
+
+export function HeartIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M12 19.5s-6.6-4.1-8.9-8.2C1.5 8.2 2.6 5.3 5.3 4.6c1.9-.5 3.6.4 4.7 2 1.1-1.6 2.8-2.5 4.7-2 2.7.7 3.8 3.6 2.2 6.7-2.3 4.1-8.9 8.2-8.9 8.2Z" />
+    </Icon>
+  );
+}
+
+export function RingIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="12" r="7" />
+    </Icon>
+  );
+}
+
+export function MountainIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <circle cx="8" cy="8" r="1.6" />
+      <path d="M3 18l5.5-7 3.7 4.6 2.3-3 6.5 5.4" />
+    </Icon>
+  );
+}
+
+export function UserIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="8.2" r="3.2" />
+      <path d="M5 19.5c1.2-3.6 3.9-5.5 7-5.5s5.8 1.9 7 5.5" />
+    </Icon>
+  );
+}
+
+export function CurvedArrowIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M4 17c3-7.5 9-11.5 15.5-9.5" />
+      <path d="M14 6.7l5.5.8-1.3 5.4" />
+    </Icon>
+  );
+}
+
+export function NoteIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z" />
+      <path d="M14 3.5v4h4" />
+      <path d="M9 12.5h6" />
+      <path d="M9 16h6" />
+    </Icon>
+  );
+}
+
 export function FileIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 56 64" fill="none" aria-hidden="true" {...props}>
