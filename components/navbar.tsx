@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
+import { flushSync } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "./container";
@@ -19,10 +20,29 @@ export function Navbar() {
   const pathname = usePathname();
   const isActive = (href: string) => href === pathname;
 
+  // Anasayfadayken bölüm linklerini kendimiz kaydırıyoruz: adres zaten aynıysa
+  // (ör. ikinci kez "Hakkımda") Next hiçbir şey yapmıyor ve sayfa yerinde kalıyordu.
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname !== "/" || !(href === "/" || href.startsWith("/#"))) {
+      setOpen(false);
+      return;
+    }
+    const hash = href.slice(1);
+    const target = hash ? document.querySelector(hash) : null;
+    if (hash && !target) return;
+
+    e.preventDefault();
+    // Mobil menü kapanınca header kısalıyor; önce kapatıp sonra kaydırmazsak hedefi aşıyoruz.
+    flushSync(() => setOpen(false));
+    if (target) target.scrollIntoView();
+    else window.scrollTo({ top: 0 });
+    history.pushState(null, "", `${location.pathname}${hash}`);
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="font-heading text-lg font-bold text-title">
+        <Link href="/" onClick={(e) => handleClick(e, "/")} className="font-heading text-lg font-bold text-title">
           BÖ
         </Link>
 
@@ -31,6 +51,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(e) => handleClick(e, item.href)}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={`border-b-2 pb-1.5 text-[15px] font-medium transition-colors ${
                 isActive(item.href)
@@ -67,7 +88,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleClick(e, item.href)}
                 className="rounded-lg px-2 py-2.5 text-sm font-medium text-body transition-colors hover:bg-surface hover:text-title"
               >
                 {item.label}

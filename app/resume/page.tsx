@@ -14,7 +14,7 @@ const experience = [
   {
     period: "2023 — Devam Ediyor",
     company: "Ahlatcı Teknoloji",
-    role: "Yazılım Geliştirme Uzman Yardımcısı",
+    role: "Yazılım Geliştirici",
     bullets: [
       "E-ticaret altyapısına uygun olarak ASP.NET MVC üzerinde geliştirilmesine katkı sağladım.",
       "Razor View ile yeniden kullanılabilir UI bileşenleri geliştirdim.",
@@ -82,7 +82,7 @@ export default function ResumePage() {
           <SectionEyebrow className="mb-6">Özgeçmiş</SectionEyebrow>
           <h1 className="text-4xl leading-tight font-bold sm:text-[52px]">{site.name}</h1>
           <p className="mt-2.5 font-heading text-lg font-medium text-primary">
-            Jr. Frontend Developer
+            {site.role}
           </p>
           <div className="mt-8 flex flex-wrap gap-5 text-sm text-body">
             <span>İstanbul – Ataşehir</span>
@@ -110,7 +110,7 @@ export default function ResumePage() {
             ve Yazılım öğretmeni olarak başladım; iletişim, sunum ve analitik becerilerimi
             geliştirdim. Ardından E-Ticaret ve Pazaryeri uzmanı olarak dijital pazarlama, sosyal
             medya yönetimi ve proje yönetimi alanlarında deneyim kazandım. Şu anda frontend
-            ağırlıklı, Yazılım Geliştirme Uzman Yardımcısı olarak çalışıyorum; ASP.NET MVC, Razor
+            ağırlıklı, Yazılım Geliştirici olarak çalışıyorum; ASP.NET MVC, Razor
             View ve DevExtreme ile kullanıcı odaklı e-ticaret modülleri geliştiriyor, REST API
             entegrasyonları ve Azure DevOps/Git ile proje yönetim süreçlerine katkı sağlıyorum.
             Web tasarımı ve frontend geliştirme konularında online eğitimlerle kendimi sürekli

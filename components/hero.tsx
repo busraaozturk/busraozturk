@@ -1,13 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./container";
-import { HeroGraphic } from "./hero-graphic";
+import heroBg from "@/public/hero-bg.jpg";
 import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section id="top" className="border-b border-border">
-      <Container className="grid gap-12 py-20 sm:py-28 lg:grid-cols-[1.6fr_1fr] lg:items-center lg:gap-10">
-        <div>
+    <section id="top" className="relative isolate overflow-hidden border-b border-border">
+      <Image
+        src={heroBg}
+        alt=""
+        fill
+        priority
+        placeholder="blur"
+        sizes="100vw"
+        className="-z-20 object-cover object-right"
+      />
+      {/* Görselin sol tarafı zaten boş; dar ekranlarda laptop metnin altına girdiği için okunurluğu koruyan bir perde. */}
+      <div
+        className="absolute inset-0 -z-10 bg-bg/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-bg/70 lg:via-transparent"
+        aria-hidden="true"
+      />
+      <Container className="py-20 sm:py-28">
+        <div className="max-w-2xl">
           <p className="text-sm font-bold tracking-[0.04em] text-primary">Merhaba, ben</p>
 
           <h1 className="mt-3 text-5xl leading-[1.05] font-bold sm:text-6xl lg:text-[76px]">
@@ -39,8 +54,6 @@ export function Hero() {
             </Link>
           </div>
         </div>
-
-        <HeroGraphic className="hidden lg:block" />
       </Container>
     </section>
   );

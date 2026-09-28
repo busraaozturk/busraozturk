@@ -40,6 +40,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Bölüm başlıkları sabit header'ın (h-16) altında kalmasın. */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
   body {
     background-color: var(--color-bg);
     color: var(--color-body);
