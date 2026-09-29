@@ -6,7 +6,10 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/busraoozturk",
   // GitHub Pages serves this project under the /busraozturk basePath (see next.config.ts).
   // next/link auto-prefixes basePath, but this plain <a href> download link needs it inline.
-  resumePdf: "/busraozturk/BusraOzturk-CV.pdf",
+  resumePdf: {
+    tr: "/busraozturk/BusraOzturk-CV.pdf",
+    en: "/busraozturk/BusraOzturk-CV-EN.pdf",
+  },
   // Navbar logosu; dosya yoksa navbar "BÖ" yazısını gösterir.
   logo: "/busraozturk/images/logo.png",
 };

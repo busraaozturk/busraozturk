@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Büşra Öztürk — Portfolyo
 
-## Getting Started
+Frontend Developer olarak projelerimi, deneyimimi ve özgeçmişimi bir arada sunduğum kişisel portfolyo sitem. Türkçe ve İngilizce dil desteğiyle, statik olarak GitHub Pages üzerinde yayınlanıyor.
 
-First, run the development server:
+**Canlı site:** https://busraaozturk.github.io/busraozturk/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Portfolyo ana sayfası](docs/screenshot.jpg)
+
+## Özellikler
+
+- **Türkçe / İngilizce dil desteği:** Menüdeki TR / EN butonlarıyla tüm içerik anında değişir; seçim tarayıcıda hatırlanır.
+- **Ana sayfa:** Tanıtım, hakkımda, öne çıkan proje, öğrenme sürecimde paylaştığım GitHub repoları, teknik beceriler ve iletişim bölümleri.
+- **Özgeçmiş sayfası:** İş deneyimi, eğitim ve kullandığım araçlar; Türkçe ve İngilizce PDF olarak indirilebilir.
+- **Responsive tasarım:** Mobilde sayfanın üzerinde açılan menü.
+- **Erişilebilirlik:** Anlamlı HTML yapısı, klavye odak göstergeleri, ekran okuyucular için etiketler ve seçili dile göre güncellenen `lang` özniteliği.
+
+## Teknolojiler
+
+| Alan | Kullanılanlar |
+|---|---|
+| Framework | [Next.js 16](https://nextjs.org) (App Router, statik export) |
+| Arayüz | React 19, TypeScript |
+| Stil | Tailwind CSS 4 |
+| Yazı tipleri | Geist, Inter, Caveat (`next/font`) |
+| Yayın | GitHub Actions → GitHub Pages |
+
+## Proje Yapısı
+
+```
+app/
+  layout.tsx          Kök düzen, yazı tipleri ve sayfa başlığı
+  page.tsx            Ana sayfa
+  resume/page.tsx     Özgeçmiş sayfası
+  globals.css         Renk paleti ve temel stiller
+  icon.png            Favicon
+components/           Sayfa bölümleri (hero, about, projects, skills, contact…)
+lib/
+  site.ts             Ad, iletişim bilgileri, logo ve PDF yolları
+  language.ts         TR / EN dil seçimi
+public/               Görseller ve özgeçmiş PDF'leri
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## İçeriği Düzenleme
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Metinler:** Her bileşen kendi Türkçe (`tr`) ve İngilizce (`en`) metinlerini dosyasının başında tutar. İngilizce metin eksik kalırsa TypeScript hata verir.
+- **Kişisel bilgiler:** Ad, e-posta ve sosyal medya linkleri `lib/site.ts` içindedir.
+- **Renkler:** Renk paleti `app/globals.css` içinde CSS değişkenleri olarak tanımlıdır.
+- **Özgeçmiş PDF'leri:** `public/BusraOzturk-CV.pdf` (Türkçe) ve `public/BusraOzturk-CV-EN.pdf` (İngilizce).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Yayınlama
 
-## Learn More
+`main` dalına yapılan her push, [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) ile siteyi derler ve GitHub Pages'e yayınlar.
 
-To learn more about Next.js, take a look at the following resources:
+## İletişim
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- E-posta: [busrozturk13@gmail.com](mailto:busrozturk13@gmail.com)
+- LinkedIn: [linkedin.com/in/busraoozturk](https://www.linkedin.com/in/busraoozturk)
+- GitHub: [github.com/busraaozturk](https://github.com/busraaozturk)

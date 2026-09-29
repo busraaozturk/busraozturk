@@ -10,7 +10,7 @@ import { useLang } from "@/lib/language";
 const tr = {
   greeting: "Merhaba, ben",
   intro:
-    "Kullanımı kolay, sade ve anlaşılır web arayüzleri geliştirmeyi seviyorum. Bir proje geliştirirken sadece kodun düzgün çalışmasına değil, ortaya çıkan işin nasıl göründüğüne ve kullanıcıya nasıl hissettirdiğine de önem veriyorum.",
+    "3 yıllık yazılım geliştirme deneyimiyle web ve e-ticaret projeleri geliştiriyorum. Kullanımı kolay, sade ve anlaşılır arayüzler kurmayı seviyorum; sadece kodun düzgün çalışmasına değil, ortaya çıkan işin kullanıcıya nasıl hissettirdiğine de önem veriyorum.",
   projects: "Projeleri görüntüle →",
   resume: "Özgeçmiş",
 };
@@ -18,7 +18,7 @@ const tr = {
 const en: typeof tr = {
   greeting: "Hi, I'm",
   intro:
-    "I love building web interfaces that are simple, clear and easy to use. When I work on a project, I care not only about the code working correctly, but also about how the result looks and how it feels to the user.",
+    "With 3 years of software development experience, I build web and e-commerce projects. I love creating interfaces that are simple, clear and easy to use, and I care not only about the code working correctly but also about how the result feels to the user.",
   projects: "View projects →",
   resume: "Resume",
 };

@@ -9,7 +9,6 @@ const tr = {
   heading:
     "Kod yazarken sonradan üzerinde çalışmayı zorlaştırmayacak bir yapı kurmaya ve yaptığım işi olabildiğince temiz ilerletmeye dikkat ediyorum.",
   body: "Frontend alanında kendimi geliştirmeye devam ederken öğrendiğim yeni şeyleri projelerimde denemeyi seviyorum. Bir problemi çözerken farklı yolları araştırmak ve sonunda daha iyi bir çözüm bulmak, bu işi sevdiğim taraflardan biri.",
-  readMore: "Devamını oku →",
   principles: [
     {
       title: "Detaylara Özen",
@@ -31,7 +30,6 @@ const en: typeof tr = {
   heading:
     "When I write code, I aim to build a structure that stays easy to work on later and to keep my work as clean as possible.",
   body: "As I keep growing in frontend development, I enjoy trying out what I learn in my projects. Exploring different approaches to a problem and finally landing on a better solution is one of the things I love most about this work.",
-  readMore: "Read more →",
   principles: [
     {
       title: "Attention to Detail",
@@ -60,12 +58,6 @@ export function About() {
           <SectionEyebrow className="mb-8">{t.eyebrow}</SectionEyebrow>
           <h2 className="max-w-[600px] text-2xl leading-snug font-bold sm:text-[34px]">{t.heading}</h2>
           <p className="mt-6 max-w-[520px] text-base leading-relaxed text-body">{t.body}</p>
-          <a
-            href="#"
-            className="mt-7 inline-block border-b border-title text-base font-bold text-title transition-colors hover:border-primary hover:text-primary"
-          >
-            {t.readMore}
-          </a>
         </div>
 
         <div className="flex flex-col">

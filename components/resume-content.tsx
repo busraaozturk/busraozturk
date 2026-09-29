@@ -3,15 +3,15 @@
 import { Container } from "./container";
 import { SectionEyebrow } from "./section-eyebrow";
 import { site } from "@/lib/site";
-import { useLang } from "@/lib/language";
+import { useLang, type Lang } from "@/lib/language";
 
 const tr = {
   eyebrow: "Özgeçmiş",
   location: "İstanbul – Ataşehir",
-  download: "PDF indir ↓",
+  downloads: { tr: "Türkçe PDF ↓", en: "İngilizce PDF ↓" },
   aboutTitle: "Hakkımda",
   about:
-    "Düzce Üniversitesi Yönetim Bilişim Sistemleri (MIS) mezunuyum. HTML, CSS, C#, SQL ve JavaScript kullanarak web projeleri geliştiriyorum. İş hayatıma Bilişim Teknolojileri ve Yazılım öğretmeni olarak başladım; iletişim, sunum ve analitik becerilerimi geliştirdim. Ardından E-Ticaret ve Pazaryeri uzmanı olarak dijital pazarlama, sosyal medya yönetimi ve proje yönetimi alanlarında deneyim kazandım. Şu anda frontend ağırlıklı, Yazılım Geliştirici olarak çalışıyorum; ASP.NET MVC, Razor View ve DevExtreme ile kullanıcı odaklı e-ticaret modülleri geliştiriyor, REST API entegrasyonları ve Azure DevOps/Git ile proje yönetim süreçlerine katkı sağlıyorum. Web tasarımı ve frontend geliştirme konularında online eğitimlerle kendimi sürekli geliştirmekteyim.",
+    "3 yıllık yazılım geliştirme deneyimine sahip Frontend Developer olarak web ve e-ticaret projeleri geliştiriyorum. HTML, CSS, JavaScript, C#, SQL, ASP.NET MVC ve Razor View teknolojileriyle kullanıcı odaklı ve sürdürülebilir arayüzler geliştiriyor; REST API entegrasyonları, Git ve Azure DevOps süreçlerinde aktif rol alıyorum. Frontend geliştirme alanındaki yetkinliklerimi güncel teknolojiler ve modern web geliştirme yaklaşımlarıyla sürekli ileri taşımayı hedefliyorum.",
   experienceTitle: "İş Deneyimi",
   experience: [
     {
@@ -80,10 +80,10 @@ const tr = {
 const en: typeof tr = {
   eyebrow: "Resume",
   location: "Ataşehir, Istanbul",
-  download: "Download PDF ↓",
+  downloads: { tr: "Turkish PDF ↓", en: "English PDF ↓" },
   aboutTitle: "About",
   about:
-    "I graduated in Management Information Systems (MIS) from Düzce University. I build web projects using HTML, CSS, C#, SQL and JavaScript. I started my career as an IT and Software teacher, where I developed my communication, presentation and analytical skills. I then worked as an E-Commerce and Marketplace Specialist, gaining experience in digital marketing, social media management and project management. I currently work as a frontend-focused Software Developer, building user-centered e-commerce modules with ASP.NET MVC, Razor View and DevExtreme, and contributing to REST API integrations and project management processes with Azure DevOps/Git. I keep improving myself in web design and frontend development through online courses.",
+    "I'm a Frontend Developer with 3 years of software development experience, building web and e-commerce projects. I develop user-focused, maintainable interfaces with HTML, CSS, JavaScript, C#, SQL, ASP.NET MVC and Razor View, and take an active role in REST API integrations as well as Git and Azure DevOps workflows. I aim to keep advancing my frontend skills with up-to-date technologies and modern web development practices.",
   experienceTitle: "Work Experience",
   experience: [
     {
@@ -151,8 +151,11 @@ const en: typeof tr = {
 
 const content = { tr, en };
 
+const pdfLangs: Lang[] = ["tr", "en"];
+
 export function ResumeContent() {
-  const t = content[useLang()];
+  const lang = useLang();
+  const t = content[lang];
 
   return (
     <>
@@ -167,14 +170,23 @@ export function ResumeContent() {
             {site.email}
           </a>
         </div>
-        <div className="mt-8">
-          <a
-            href={site.resumePdf}
-            download
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
-          >
-            {t.download}
-          </a>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {/* Sayfanın dilindeki PDF birincil buton olarak öne çıkıyor. */}
+          {pdfLangs.map((code) => (
+            <a
+              key={code}
+              href={site.resumePdf[code]}
+              download
+              hrefLang={code}
+              className={`inline-flex items-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold transition-colors ${
+                code === lang
+                  ? "border border-primary bg-primary text-white hover:bg-primary-hover"
+                  : "border border-primary text-primary hover:bg-surface"
+              }`}
+            >
+              {t.downloads[code]}
+            </a>
+          ))}
         </div>
       </Container>
 
