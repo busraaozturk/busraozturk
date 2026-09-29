@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "./container";
 import { SectionEyebrow } from "./section-eyebrow";
 import {
@@ -17,6 +19,7 @@ import {
   CurvedArrowIcon,
 } from "./icons";
 import { site } from "@/lib/site";
+import { useLang } from "@/lib/language";
 
 /**
  * Vitrin projeleri hazırlanana kadar, öğrenme sürecimde tuttuğum notları ve
@@ -27,64 +30,112 @@ function repoUrl(name: string) {
   return `${site.github}/${name}`;
 }
 
-const notesRepo = {
-  name: "CalismaNotlarim",
-  description:
-    "Web geliştirme sürecinde öğrendiğim konuları, ihtiyaç duyduğumda yeniden dönebileceğim şekilde bir araya getirdiğim kişisel çalışma notlarım.",
-  contents: [
-    { icon: BookIcon, label: "Temel Konular" },
-    { icon: BranchIcon, label: "Git & GitHub" },
-    { icon: CodeIcon, label: "HTML & CSS" },
-    { icon: BracesIcon, label: "JavaScript" },
-  ],
+const notesRepoName = "CalismaNotlarim";
+const notesIcons = [BookIcon, BranchIcon, CodeIcon, BracesIcon];
+const practiceRepoName = "HTML-CSS-JS";
+const practiceTags = ["HTML", "CSS", "JavaScript"];
+
+const tr = {
+  eyebrow: "03 — Öğrenirken Paylaştıklarım",
+  profile: "GitHub profilim →",
+  heading: "Öğrenirken ürettiklerimi paylaşıyorum.",
+  intro:
+    "Çalışma notlarımı ve küçük uygulamalarımı, aynı yoldan geçenlere kaynak ve başlangıç noktası olması için GitHub'da açık tutuyorum.",
+  stats: ["02 açık repo", "Temelden pratiğe", "Notlar ve uygulamalar"],
+  archive: "Öğrenme Arşivim",
+  question: "Nereden başlamak istersin?",
+  explore: "Konuları incelemek istiyorum",
+  practice: "Uygulayarak öğrenmek istiyorum",
+  or: "ya da",
+  pick: "İhtiyacına uygun repoyu seçerek ilerleyebilirsin.",
+  notes: {
+    badge: "01 · Notlar",
+    description:
+      "Web geliştirme sürecinde öğrendiğim konuları, ihtiyaç duyduğumda yeniden dönebileceğim şekilde bir araya getirdiğim kişisel çalışma notlarım.",
+    contentsTitle: "İçerikler",
+    contents: ["Temel Konular", "Git & GitHub", "HTML & CSS", "JavaScript"],
+    cta: "Çalışma notlarını incele ↗",
+    hint: "Konu konu ilerlemek için",
+  },
+  apps: {
+    badge: "02 · Uygulamalar",
+    description:
+      "HTML, CSS ve JavaScript ile hazırladığım küçük uygulamaları ve arayüz denemelerini bir arada tuttuğum pratik alanım.",
+    cta: "Uygulamaları incele ↗",
+    hint: "Öğrendiklerini pekiştirmek için",
+  },
+  motto: "İncele · Dene · Kendi yaklaşımını geliştir",
 };
 
-const practiceRepo = {
-  name: "HTML-CSS-JS",
-  description:
-    "HTML, CSS ve JavaScript ile hazırladığım küçük uygulamaları ve arayüz denemelerini bir arada tuttuğum pratik alanım.",
-  tags: ["HTML", "CSS", "JavaScript"],
+const en: typeof tr = {
+  eyebrow: "03 — Shared While Learning",
+  profile: "My GitHub profile →",
+  heading: "I share what I build while learning.",
+  intro:
+    "I keep my study notes and small projects public on GitHub, so they can serve as a resource and a starting point for others on the same path.",
+  stats: ["02 public repos", "From basics to practice", "Notes and projects"],
+  archive: "My Learning Archive",
+  question: "Where would you like to start?",
+  explore: "I want to explore the topics",
+  practice: "I want to learn by doing",
+  or: "or",
+  pick: "Pick the repo that fits your needs and go from there.",
+  notes: {
+    badge: "01 · Notes",
+    description:
+      "My personal study notes, gathering the topics I learned in web development so I can come back to them whenever I need.",
+    contentsTitle: "Contents",
+    contents: ["Fundamentals", "Git & GitHub", "HTML & CSS", "JavaScript"],
+    cta: "Explore the study notes ↗",
+    hint: "To progress topic by topic",
+  },
+  apps: {
+    badge: "02 · Projects",
+    description:
+      "My practice space where I keep small apps and UI experiments built with HTML, CSS and JavaScript.",
+    cta: "Explore the projects ↗",
+    hint: "To reinforce what you've learned",
+  },
+  motto: "Explore · Try · Develop your own approach",
 };
+
+const content = { tr, en };
+const statIcons = [FolderIcon, SeedlingIcon, NoteIcon];
 
 export function GithubRepos() {
+  const t = content[useLang()];
+
   return (
-    <section id="projects" className="border-t border-border py-20 sm:py-28">
+    <section id="learning" className="border-t border-border py-20 sm:py-28">
       <Container>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <SectionEyebrow>02 — Öğrenirken Paylaştıklarım</SectionEyebrow>
+          <SectionEyebrow>{t.eyebrow}</SectionEyebrow>
           <a
             href={site.github}
             target="_blank"
             rel="noreferrer"
             className="text-sm font-semibold text-title transition-colors hover:text-primary"
           >
-            GitHub profilim →
+            {t.profile}
           </a>
         </div>
 
-        <h2 className="max-w-2xl text-3xl leading-snug font-bold sm:text-4xl">
-          Öğrenirken ürettiklerimi paylaşıyorum.
-        </h2>
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-body">
-          Çalışma notlarımı ve küçük uygulamalarımı, aynı yoldan geçenlere kaynak ve başlangıç
-          noktası olması için GitHub&apos;da açık tutuyorum.
-        </p>
+        <h2 className="max-w-2xl text-3xl leading-snug font-bold sm:text-4xl">{t.heading}</h2>
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-body">{t.intro}</p>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <span className="flex items-center gap-2 text-sm text-body">
-            <FolderIcon className="size-[18px] text-primary" />
-            02 açık repo
-          </span>
-          <span className="hidden h-4 w-px bg-border sm:block" aria-hidden="true" />
-          <span className="flex items-center gap-2 text-sm text-body">
-            <SeedlingIcon className="size-[18px] text-primary" />
-            Temelden pratiğe
-          </span>
-          <span className="hidden h-4 w-px bg-border sm:block" aria-hidden="true" />
-          <span className="flex items-center gap-2 text-sm text-body">
-            <NoteIcon className="size-[18px] text-primary" />
-            Notlar ve uygulamalar
-          </span>
+          {t.stats.map((stat, i) => {
+            const StatIcon = statIcons[i];
+            return (
+              <div key={i} className="contents">
+                {i > 0 && <span className="hidden h-4 w-px bg-border sm:block" aria-hidden="true" />}
+                <span className="flex items-center gap-2 text-sm text-body">
+                  <StatIcon className="size-[18px] text-primary" />
+                  {stat}
+                </span>
+              </div>
+            );
+          })}
         </div>
 
         {/* Panel */}
@@ -103,31 +154,37 @@ export function GithubRepos() {
           </div>
 
           <div className="sm:px-6">
-            <p className="text-xs font-semibold tracking-[0.1em] text-body uppercase">
-              Öğrenme Arşivim
-            </p>
+            <p className="text-xs font-semibold tracking-[0.1em] text-body uppercase">{t.archive}</p>
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-              <h3 className="text-xl font-bold text-title sm:text-2xl">
-                Nereden başlamak istersin?
-              </h3>
+              <h3 className="text-xl font-bold text-title sm:text-2xl">{t.question}</h3>
 
-              <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 rounded-lg border border-primary/50 bg-surface px-4 py-2.5 text-sm font-semibold text-title">
-                  <BookIcon className="size-4 text-primary" />
-                  Konuları incelemek istiyorum
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-body">
-                  <CodeIcon className="size-4 text-body" />
-                  Uygulayarak öğrenmek istiyorum
-                </span>
+              {/* Tıklanabilir değiller; aşağıdaki kartları tanıtan etiketler, bu yüzden buton görünümü yok. */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+                {[
+                  { num: "01", Icon: BookIcon, label: t.explore },
+                  { num: "02", Icon: CodeIcon, label: t.practice },
+                ].map(({ num, Icon, label }, i) => (
+                  <div key={num} className="contents">
+                    {i > 0 && <span className="font-hand text-lg text-body">{t.or}</span>}
+                    <span className="inline-flex items-center gap-2.5">
+                      <span className="relative flex size-8 shrink-0 items-center justify-center rounded-md bg-surface">
+                        <Icon className="size-4 text-primary" />
+                        <span className="absolute -top-1.5 -right-1.5 font-heading text-[10px] font-bold text-primary">
+                          {num}
+                        </span>
+                      </span>
+                      <span className="font-heading font-semibold text-title">
+                        {label}
+                      </span>
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="mt-6 flex flex-col items-center gap-2">
-              <p className="text-center text-sm text-body">
-                İhtiyacına uygun repoyu seçerek ilerleyebilirsin.
-              </p>
+              <p className="text-center text-sm text-body">{t.pick}</p>
               <span className="size-1.5 rounded-full bg-primary" aria-hidden="true" />
               <span className="h-8 border-l border-dashed border-border" aria-hidden="true" />
             </div>
@@ -149,32 +206,35 @@ export function GithubRepos() {
                   </div>
 
                   <span className="mt-4 inline-block rounded-full bg-surface px-3 py-1 text-[11px] font-semibold tracking-[0.05em] text-body uppercase">
-                    01 · Notlar
+                    {t.notes.badge}
                   </span>
 
-                  <h4 className="mt-3 font-mono text-lg font-bold text-title">{notesRepo.name}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-body">{notesRepo.description}</p>
+                  <h4 className="mt-3 font-mono text-lg font-bold text-title">{notesRepoName}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-body">{t.notes.description}</p>
 
                   <p className="mt-5 text-[11px] font-semibold tracking-[0.08em] text-body uppercase">
-                    İçerikler
+                    {t.notes.contentsTitle}
                   </p>
                   <div className="mt-2 flex flex-col gap-2.5 rounded-lg border border-border bg-card p-3.5">
-                    {notesRepo.contents.map((item) => (
-                      <span key={item.label} className="flex items-center gap-2.5 text-sm text-title">
-                        <item.icon className="size-4 shrink-0 text-primary" />
-                        {item.label}
-                      </span>
-                    ))}
+                    {t.notes.contents.map((label, i) => {
+                      const ItemIcon = notesIcons[i];
+                      return (
+                        <span key={label} className="flex items-center gap-2.5 text-sm text-title">
+                          <ItemIcon className="size-4 shrink-0 text-primary" />
+                          {label}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <a
-                  href={repoUrl(notesRepo.name)}
+                  href={repoUrl(notesRepoName)}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
                 >
-                  Çalışma notlarını incele ↗
+                  {t.notes.cta}
                 </a>
               </div>
 
@@ -194,14 +254,14 @@ export function GithubRepos() {
                   </div>
 
                   <span className="mt-4 inline-block rounded-full bg-surface px-3 py-1 text-[11px] font-semibold tracking-[0.05em] text-body uppercase">
-                    02 · Uygulamalar
+                    {t.apps.badge}
                   </span>
 
-                  <h4 className="mt-3 font-mono text-lg font-bold text-title">{practiceRepo.name}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-body">{practiceRepo.description}</p>
+                  <h4 className="mt-3 font-mono text-lg font-bold text-title">{practiceRepoName}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-body">{t.apps.description}</p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {practiceRepo.tags.map((tag) => (
+                    {practiceTags.map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-body"
@@ -236,12 +296,12 @@ export function GithubRepos() {
                 </div>
 
                 <a
-                  href={repoUrl(practiceRepo.name)}
+                  href={repoUrl(practiceRepoName)}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
                 >
-                  Uygulamaları incele ↗
+                  {t.apps.cta}
                 </a>
               </div>
             </div>
@@ -249,20 +309,20 @@ export function GithubRepos() {
             <div className="mt-3 hidden grid-cols-2 gap-8 lg:gap-12 xl:grid">
               <div className="-rotate-2 flex items-start gap-1.5 pl-1 text-primary/70" aria-hidden="true">
                 <CurvedArrowIcon className="size-6 shrink-0" />
-                <span className="font-hand text-lg leading-tight">Konu konu ilerlemek için</span>
+                <span className="font-hand text-lg leading-tight">{t.notes.hint}</span>
               </div>
               <div
                 className="flex items-start justify-end gap-1.5 rotate-2 pr-1 text-right text-primary/70"
                 aria-hidden="true"
               >
-                <span className="font-hand text-lg leading-tight">Öğrendiklerini pekiştirmek için</span>
+                <span className="font-hand text-lg leading-tight">{t.apps.hint}</span>
                 <CurvedArrowIcon className="size-6 shrink-0 -scale-x-100" />
               </div>
             </div>
 
             <div className="mt-10 flex items-center justify-center gap-2 text-sm text-body sm:mt-14">
               <SeedlingIcon className="size-4 text-primary" />
-              <span>İncele · Dene · Kendi yaklaşımını geliştir</span>
+              <span>{t.motto}</span>
             </div>
           </div>
         </div>

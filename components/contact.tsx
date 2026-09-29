@@ -1,11 +1,29 @@
+"use client";
+
 import { Container } from "./container";
 import { SectionEyebrow } from "./section-eyebrow";
 import { EnvelopeIcon, NetworkIcon, CodeIcon } from "./icons";
 import { site } from "@/lib/site";
+import { useLang } from "@/lib/language";
+
+const tr = {
+  eyebrow: "06 — İletişim",
+  body: "Profesyonel fırsatlar ve iş birlikleri için memnuniyetle görüşürüm. Sizin için en rahat olan kanaldan ulaşabilirsiniz.",
+  email: "E-posta",
+};
+
+const en: typeof tr = {
+  eyebrow: "06 — Contact",
+  body: "I'm always happy to talk about professional opportunities and collaborations. Feel free to reach out through whichever channel suits you best.",
+  email: "Email",
+};
+
+const content = { tr, en };
 
 export function Contact() {
+  const t = content[useLang()];
   const cards = [
-    { label: "E-posta", value: site.email, href: `mailto:${site.email}`, Icon: EnvelopeIcon },
+    { label: t.email, value: site.email, href: `mailto:${site.email}`, Icon: EnvelopeIcon },
     { label: "LinkedIn", value: "linkedin.com/in/busraoozturk", href: site.linkedin, Icon: NetworkIcon },
     { label: "GitHub", value: "github.com/busraaozturk", href: site.github, Icon: CodeIcon },
   ];
@@ -14,17 +32,14 @@ export function Contact() {
     <section id="contact" className="border-t border-border bg-surface py-20 sm:py-28">
       <Container className="grid gap-10 lg:grid-cols-[1fr_2fr] lg:items-start lg:gap-16">
         <div>
-          <SectionEyebrow className="mb-6">05 — İletişim</SectionEyebrow>
-          <p className="max-w-[340px] text-lg leading-relaxed text-title">
-            Profesyonel fırsatlar ve iş birlikleri için memnuniyetle görüşürüm. Sizin için en
-            rahat olan kanaldan ulaşabilirsiniz.
-          </p>
+          <SectionEyebrow className="mb-6">{t.eyebrow}</SectionEyebrow>
+          <p className="max-w-[340px] text-lg leading-relaxed text-title">{t.body}</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-3">
           {cards.map(({ label, value, href, Icon }) => (
             <a
-              key={label}
+              key={href}
               href={href}
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noreferrer"

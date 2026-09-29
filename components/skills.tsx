@@ -1,21 +1,41 @@
+"use client";
+
 import { Container } from "./container";
 import { SectionEyebrow } from "./section-eyebrow";
 import { CodeIcon, PaletteIcon, DatabaseIcon, WrenchIcon } from "./icons";
+import { useLang } from "@/lib/language";
 
-const groups = [
-  { title: "Frontend", icon: CodeIcon, items: ["HTML", "CSS", "JavaScript", "React"] },
-  { title: "UI & Styling", icon: PaletteIcon, items: ["Tailwind CSS", "Bootstrap"] },
-  { title: "Backend & Data", icon: DatabaseIcon, items: [".NET", "REST API"] },
-  { title: "Araçlar", icon: WrenchIcon, items: ["Figma", "Photoshop", "Git & GitHub"] },
-];
+const tr = {
+  eyebrow: "04 — Teknik Yetkinlikler",
+  groups: [
+    { title: "Frontend", icon: CodeIcon, items: ["HTML", "CSS", "JavaScript", "React"] },
+    { title: "UI & Styling", icon: PaletteIcon, items: ["Tailwind CSS", "Bootstrap"] },
+    { title: "Backend & Data", icon: DatabaseIcon, items: [".NET", "REST API"] },
+    { title: "Araçlar", icon: WrenchIcon, items: ["Figma", "Photoshop", "Git & GitHub"] },
+  ],
+};
+
+const en: typeof tr = {
+  eyebrow: "04 — Technical Skills",
+  groups: [
+    { title: "Frontend", icon: CodeIcon, items: ["HTML", "CSS", "JavaScript", "React"] },
+    { title: "UI & Styling", icon: PaletteIcon, items: ["Tailwind CSS", "Bootstrap"] },
+    { title: "Backend & Data", icon: DatabaseIcon, items: [".NET", "REST API"] },
+    { title: "Tools", icon: WrenchIcon, items: ["Figma", "Photoshop", "Git & GitHub"] },
+  ],
+};
+
+const content = { tr, en };
 
 export function Skills() {
+  const t = content[useLang()];
+
   return (
     <section id="skills" className="border-t border-border bg-surface py-20 sm:py-28">
       <Container>
-        <SectionEyebrow className="mb-10 sm:mb-14">03 — Teknik Yetkinlikler</SectionEyebrow>
+        <SectionEyebrow className="mb-10 sm:mb-14">{t.eyebrow}</SectionEyebrow>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {groups.map((group, i) => (
+          {t.groups.map((group, i) => (
             <div key={group.title} className={i > 0 ? "lg:border-l lg:border-border lg:pl-8" : ""}>
               <div className="flex items-center gap-2.5">
                 <group.icon className="size-[18px] text-primary" />
