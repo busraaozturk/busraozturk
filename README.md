@@ -10,7 +10,7 @@ Frontend Developer olarak projelerimi, deneyimimi ve özgeçmişimi bir arada su
 
 - **Türkçe / İngilizce dil desteği:** Menüdeki TR / EN butonlarıyla tüm içerik anında değişir; seçim tarayıcıda hatırlanır.
 - **Ana sayfa:** Tanıtım, hakkımda, öne çıkan proje, öğrenme sürecimde paylaştığım GitHub repoları, teknik beceriler ve iletişim bölümleri.
-- **Özgeçmiş sayfası:** İş deneyimi, eğitim ve kullandığım araçlar; Türkçe ve İngilizce PDF olarak indirilebilir.
+- **Özgeçmiş sayfası:** Profil, iş deneyimi, projeler, eğitim, teknik yetkinlikler, sertifikalar ve yabancı dil; Türkçe ve İngilizce PDF olarak indirilebilir.
 - **Responsive tasarım:** Mobilde sayfanın üzerinde açılan menü.
 - **Erişilebilirlik:** Anlamlı HTML yapısı, klavye odak göstergeleri, ekran okuyucular için etiketler ve seçili dile göre güncellenen `lang` özniteliği.
 
