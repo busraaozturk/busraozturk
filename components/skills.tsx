@@ -9,25 +9,21 @@ import { useLang } from "@/lib/language";
 const tr = {
   eyebrow: "04 — Teknik Beceriler",
   groups: [
-    { title: "Frontend", icon: CodeIcon, items: ["HTML", "CSS", "JavaScript", "Razor View"] },
-    { title: "UI & Bileşenler", icon: PaletteIcon, items: ["Bootstrap", "DevExtreme", "Tailwind CSS"] },
-    { title: "Backend & Veri", icon: DatabaseIcon, items: ["C#", "ASP.NET MVC", "MS SQL Server", "REST API"] },
+    { title: "Frontend", icon: CodeIcon, items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Razor View"] },
+    { title: "UI & Bileşenler", icon: PaletteIcon, items: ["Tailwind CSS", "Bootstrap", "DevExtreme", "Recharts"] },
+    { title: "Backend & Veri", icon: DatabaseIcon, items: ["C#", "ASP.NET MVC", "MS SQL Server", "PostgreSQL", "Supabase", "REST API"] },
     { title: "Araçlar & Süreç", icon: WrenchIcon, items: ["Git & GitHub", "Azure DevOps", "Figma", "Postman"] },
   ],
-  learningLabel: "Şu an geliştirdiğim",
-  learning: ["React", "Next.js", "TypeScript"],
 };
 
 const en: typeof tr = {
   eyebrow: "04 — Technical Skills",
   groups: [
-    { title: "Frontend", icon: CodeIcon, items: ["HTML", "CSS", "JavaScript", "Razor View"] },
-    { title: "UI & Components", icon: PaletteIcon, items: ["Bootstrap", "DevExtreme", "Tailwind CSS"] },
-    { title: "Backend & Data", icon: DatabaseIcon, items: ["C#", "ASP.NET MVC", "MS SQL Server", "REST API"] },
+    { title: "Frontend", icon: CodeIcon, items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Razor View"] },
+    { title: "UI & Components", icon: PaletteIcon, items: ["Tailwind CSS", "Bootstrap", "DevExtreme", "Recharts"] },
+    { title: "Backend & Data", icon: DatabaseIcon, items: ["C#", "ASP.NET MVC", "MS SQL Server", "PostgreSQL", "Supabase", "REST API"] },
     { title: "Tools & Workflow", icon: WrenchIcon, items: ["Git & GitHub", "Azure DevOps", "Figma", "Postman"] },
   ],
-  learningLabel: "Currently learning",
-  learning: ["React", "Next.js", "TypeScript"],
 };
 
 const content = { tr, en };
@@ -52,17 +48,6 @@ export function Skills() {
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-border pt-8">
-          <span className="font-heading text-xs font-semibold tracking-[0.08em] text-body uppercase">
-            {t.learningLabel}
-          </span>
-          {t.learning.map((item) => (
-            <span key={item} className="rounded-full border border-border bg-card px-3.5 py-1.5 text-sm text-title">
-              {item}
-            </span>
           ))}
         </div>
       </Container>

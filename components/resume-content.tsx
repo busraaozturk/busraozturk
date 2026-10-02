@@ -7,146 +7,204 @@ import { useLang, type Lang } from "@/lib/language";
 
 const tr = {
   eyebrow: "Özgeçmiş",
-  location: "İstanbul – Ataşehir",
+  location: "İstanbul, Türkiye",
   downloads: { tr: "Türkçe PDF ↓", en: "İngilizce PDF ↓" },
-  aboutTitle: "Hakkımda",
+  aboutTitle: "Profil",
   about:
-    "3 yıllık yazılım geliştirme deneyimine sahip Frontend Developer olarak web ve e-ticaret projeleri geliştiriyorum. HTML, CSS, JavaScript, C#, SQL, ASP.NET MVC ve Razor View teknolojileriyle kullanıcı odaklı ve sürdürülebilir arayüzler geliştiriyor; REST API entegrasyonları, Git ve Azure DevOps süreçlerinde aktif rol alıyorum. Frontend geliştirme alanındaki yetkinliklerimi güncel teknolojiler ve modern web geliştirme yaklaşımlarıyla sürekli ileri taşımayı hedefliyorum.",
+    "Yönetim Bilişim Sistemleri mezunu, 3 yıllık yazılım geliştirme deneyimine sahip Frontend Developer'ım. HTML, CSS, JavaScript, TypeScript, React, Next.js, C# ve ASP.NET MVC teknolojileriyle web ve e-ticaret uygulamaları geliştiriyorum. REST API entegrasyonları, responsive arayüz geliştirme, Git ve Azure DevOps süreçlerinde deneyim sahibiyim. Kullanıcı odaklı, sürdürülebilir ve yeniden kullanılabilir web arayüzleri geliştiriyorum.",
   experienceTitle: "İş Deneyimi",
   experience: [
     {
-      period: "2023 — Devam Ediyor",
+      period: "10/2023 — Günümüz",
       company: "Ahlatcı Teknoloji",
-      role: "Yazılım Geliştirici",
+      role: "Yazılım Geliştiricisi",
       bullets: [
-        "E-ticaret altyapısına uygun olarak ASP.NET MVC üzerinde geliştirilmesine katkı sağladım.",
-        "Razor View ile yeniden kullanılabilir UI bileşenleri geliştirdim.",
-        "JavaScript ile dinamik arayüz etkileşimleri oluşturdum; DevExtreme DataGrid ile yönetim panelleri tasarladım.",
-        "REST API'lerle veri entegrasyonu sağladım.",
+        "ASP.NET MVC ve Razor View kullanarak e-ticaret web sitesinin geliştirme süreçlerinde aktif rol aldım.",
+        "Razor View, HTML ve CSS kullanarak yeniden kullanılabilir ve responsive UI bileşenleri geliştirdim.",
+        "REST API entegrasyonları gerçekleştirerek frontend ve backend arasındaki veri akışını sağladım.",
+        "Figma kullanarak UI tasarımları hazırladım ve tasarımları web arayüzlerine dönüştürdüm.",
+        "JavaScript ile dinamik kullanıcı arayüzleri ve etkileşimli web bileşenleri geliştirdim.",
+        "DevExtreme bileşenlerini kullanarak yönetim paneli arayüzlerinin geliştirilmesine katkı sağladım.",
+        "Git ve Azure DevOps kullanarak versiyon kontrolü ve geliştirme süreçlerinde görev aldım.",
       ],
     },
     {
-      period: "Mart 2022 — Mart 2023",
+      period: "03/2022 — 03/2023",
       company: "Korkod Yazılım",
-      role: "E-Ticaret ve Pazaryeri Uzmanı",
+      role: "E-ticaret ve Pazaryeri Uzmanı",
       bullets: [
-        "Pazaryerlerinde ürün yükleme ve sipariş süreçlerinin yönetiminde aktif rol aldım.",
-        "Sosyal medya içerik planlama ve yönetim süreçlerini yürüttüm.",
-        "Photoshop, Illustrator, After Effects ve Canva uygulamalarını temel seviyede kullanabilme yetkinliği edindim.",
+        "Pazaryerlerinde ürün, içerik ve sipariş yönetimi süreçlerini yürüttüm.",
+        "Sosyal medya içerik planlama ve yönetim süreçlerinde görev aldım.",
+        "Photoshop, Illustrator, After Effects ve Canva kullanarak dijital içerikler hazırladım.",
       ],
     },
     {
-      period: "Eylül 2021 — Ocak 2022",
-      company: "MEB (Ücretli Öğretmen)",
-      role: "Bilişim Teknolojileri ve Yazılım Öğretmeni",
+      period: "09/2021 — 01/2022",
+      company: "Hasanleyli Ortaokulu",
+      role: "Bilişim Teknolojileri Öğretmeni",
       bullets: [
-        "Ortaokul öğrencilerine temel bilişim teknolojileri eğitimi verdim.",
-        "Bu süreçte iletişim becerilerimi geliştirdim ve topluluk önünde etkili konuşma yetkinliği edindim.",
+        "Öğrencilere temel bilişim teknolojileri ve yazılım konularında eğitim verdim.",
+        "Teknik konuları farklı bilgi seviyelerine uygun şekilde aktararak iletişim ve sunum becerilerimi geliştirdim.",
       ],
+    },
+  ],
+  projectsTitle: "Projeler",
+  techLabel: "Teknolojiler",
+  projects: [
+    {
+      period: "2026",
+      name: "TravelMind AI",
+      role: "Full Stack Developer",
+      bullets: [
+        "Kullanıcı arayüzü, uygulama akışı ve temel yazılım mimarisi dahil olmak üzere seyahat planlama uygulamasını uçtan uca geliştirdim.",
+        "Destinasyon, tarih, bütçe ve kullanıcı tercihlerine göre günlük ve saatlik seyahat rotaları oluşturan çok adımlı planlama sistemi geliştirdim.",
+        "Hava durumu ve döviz kuru için REST API entegrasyonları gerçekleştirerek bütçe hesaplama, otel önerileri, bavul listesi ve alternatif rota gibi seyahat özelliklerini geliştirdim.",
+        "Responsive kullanıcı arayüzleri, kullanıcı giriş/kayıt, kayıtlı seyahatlerin yönetimi ve seyahat planlarının PDF olarak oluşturulması gibi uygulama özelliklerini geliştirdim.",
+      ],
+      tech: "Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL, OpenAI SDK, Anthropic SDK, Google Places API, Google Routes API, Recharts, jsPDF",
     },
   ],
   educationTitle: "Eğitim",
   education: [
     {
-      period: "2017 — 2021",
-      program: "Yönetim Bilişim Sistemleri",
+      period: "09/2017 — 06/2021",
+      program: "Yönetim Bilişim Sistemleri (MIS/YBS)",
       school: "Düzce Üniversitesi",
     },
     {
-      period: "2013 — 2017",
-      program: "Bilişim Teknolojileri – Web Tasarım ve Programlama",
+      period: "09/2013 — 06/2017",
+      program: "Web Tasarımı",
       school: "Ataşehir Rotary Çok Programlı Anadolu Lisesi",
     },
   ],
-  toolsTitle: "Teknolojiler & Araçlar",
+  toolsTitle: "Teknik Yetkinlikler",
   tools: [
     {
-      title: "Diller & Teknolojiler",
-      items: ["HTML · CSS · JavaScript", "C#", "ASP.NET MVC · Razor View", "SQL", "Bootstrap", "Git / GitHub"],
+      title: "Frontend",
+      items: "HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Responsive Web Design",
     },
+    { title: "Backend", items: "C#, ASP.NET MVC, Razor View" },
+    { title: "Database & Backend Services", items: "SQL, Microsoft SQL Server, PostgreSQL, Supabase" },
+    { title: "UI / Components", items: "DevExtreme, Figma, Recharts" },
     {
-      title: "Programlar",
-      items: [
-        "MS Visual Studio · VS Code",
-        "MS SQL Server",
-        "Figma · Postman",
-        "Adobe (Photoshop · Illustrator · After Effects)",
-        "MS Office (Word · Excel · PowerPoint · Outlook · Access)",
-      ],
+      title: "API & Integrations",
+      items: "REST API, OpenAI SDK, Anthropic SDK, Google Places API, Google Routes API, Postman",
     },
+    { title: "Version Control & DevOps", items: "Git, GitHub, Azure DevOps" },
+    { title: "Development Tools", items: "Visual Studio, Visual Studio Code, Cursor" },
   ],
+  certificationsTitle: "Sertifikalar",
+  certifications: [
+    { year: "2024", name: "Uygulamalı Figma", issuer: "BTK Akademi" },
+    { year: "2024", name: "Azure DevOps .NET Eğitimi", issuer: "BilgeAdam Teknoloji" },
+    { year: "2023", name: "ASP.NET Core Bootcamp", issuer: "BTK Akademi" },
+    { year: "2023", name: "Versiyon Kontrolleri: Git & GitHub", issuer: "BTK Akademi" },
+    { year: "2023", name: "Uygulamalarla SQL", issuer: "BTK Akademi" },
+    { year: "2023", name: "C#", issuer: "BTK Akademi" },
+  ],
+  languagesTitle: "Yabancı Dil",
+  languages: [{ name: "İngilizce", level: "Temel Seviye" }],
 };
 
 const en: typeof tr = {
   eyebrow: "Resume",
-  location: "Ataşehir, Istanbul",
+  location: "İstanbul, Türkiye",
   downloads: { tr: "Turkish PDF ↓", en: "English PDF ↓" },
-  aboutTitle: "About",
+  aboutTitle: "Profile",
   about:
-    "I'm a Frontend Developer with 3 years of software development experience, building web and e-commerce projects. I develop user-focused, maintainable interfaces with HTML, CSS, JavaScript, C#, SQL, ASP.NET MVC and Razor View, and take an active role in REST API integrations as well as Git and Azure DevOps workflows. I aim to keep advancing my frontend skills with up-to-date technologies and modern web development practices.",
+    "Management Information Systems graduate and Frontend Developer with 3 years of software development experience. Experienced in developing web and e-commerce applications using HTML, CSS, JavaScript, TypeScript, React, Next.js, C#, and ASP.NET MVC. Skilled in REST API integrations, responsive web development, Git, and Azure DevOps workflows. Focused on building user-centered, maintainable, and reusable web interfaces.",
   experienceTitle: "Work Experience",
   experience: [
     {
-      period: "2023 — Present",
+      period: "10/2023 — Present",
       company: "Ahlatcı Teknoloji",
       role: "Software Developer",
       bullets: [
-        "Contributed to development on ASP.NET MVC in line with the e-commerce infrastructure.",
-        "Built reusable UI components with Razor View.",
-        "Created dynamic UI interactions with JavaScript and designed admin panels with DevExtreme DataGrid.",
-        "Handled data integration with REST APIs.",
+        "Contributed to the development of an e-commerce application using ASP.NET MVC and Razor Views.",
+        "Developed reusable and responsive UI components using Razor Views, HTML, and CSS.",
+        "Implemented REST API integrations to enable data flow between frontend and backend systems.",
+        "Created UI designs in Figma and translated them into functional web interfaces.",
+        "Developed dynamic user interfaces and interactive web components using JavaScript.",
+        "Contributed to the development of admin panel interfaces using DevExtreme components.",
+        "Used Git and Azure DevOps for version control and development workflows.",
       ],
     },
     {
-      period: "Mar 2022 — Mar 2023",
+      period: "03/2022 — 03/2023",
       company: "Korkod Yazılım",
-      role: "E-Commerce and Marketplace Specialist",
+      role: "E-commerce & Marketplace Specialist",
       bullets: [
-        "Played an active role in managing product listings and order processes on marketplaces.",
-        "Ran social media content planning and management.",
-        "Gained basic proficiency in Photoshop, Illustrator, After Effects and Canva.",
+        "Managed product listings, content, and order operations across online marketplaces.",
+        "Contributed to social media content planning and management.",
+        "Created digital content using Adobe Photoshop, Illustrator, After Effects, and Canva.",
       ],
     },
     {
-      period: "Sep 2021 — Jan 2022",
-      company: "Ministry of National Education (Contract Teacher)",
-      role: "IT and Software Teacher",
+      period: "09/2021 — 01/2022",
+      company: "Hasanleyli Secondary School",
+      role: "Information Technologies Teacher",
       bullets: [
-        "Taught fundamental information technology to middle school students.",
-        "Strengthened my communication skills and gained confidence in public speaking.",
+        "Taught students the fundamentals of information technologies and software development.",
+        "Improved communication and presentation skills by explaining technical concepts to students with different levels of knowledge.",
       ],
+    },
+  ],
+  projectsTitle: "Projects",
+  techLabel: "Technologies",
+  projects: [
+    {
+      period: "2026",
+      name: "TravelMind AI",
+      role: "Full Stack Developer",
+      bullets: [
+        "Developed an end-to-end travel planning application, including the user interface, application flow, and core software architecture.",
+        "Built a multi-step planning system that generates daily and hourly travel itineraries based on destination, travel dates, budget, and user preferences.",
+        "Integrated REST APIs for weather and exchange-rate data and developed features including budget calculation, hotel recommendations, packing lists, and alternative itineraries.",
+        "Developed responsive user interfaces and application features including user authentication, saved trip management, and PDF generation for travel plans.",
+      ],
+      tech: "Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL, OpenAI SDK, Anthropic SDK, Google Places API, Google Routes API, Recharts, jsPDF",
     },
   ],
   educationTitle: "Education",
   education: [
     {
-      period: "2017 — 2021",
-      program: "Management Information Systems",
+      period: "09/2017 — 06/2021",
+      program: "Management Information Systems (MIS)",
       school: "Düzce University",
     },
     {
-      period: "2013 — 2017",
-      program: "Information Technology – Web Design and Programming",
+      period: "09/2013 — 06/2017",
+      program: "Web Design",
       school: "Ataşehir Rotary Multi-Program Anatolian High School",
     },
   ],
-  toolsTitle: "Technologies & Tools",
+  toolsTitle: "Technical Skills",
   tools: [
     {
-      title: "Languages & Technologies",
-      items: ["HTML · CSS · JavaScript", "C#", "ASP.NET MVC · Razor View", "SQL", "Bootstrap", "Git / GitHub"],
+      title: "Frontend",
+      items: "HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Responsive Web Design",
     },
+    { title: "Backend", items: "C#, ASP.NET MVC, Razor Views" },
+    { title: "Database & Backend Services", items: "SQL, Microsoft SQL Server, PostgreSQL, Supabase" },
+    { title: "UI / Components", items: "DevExtreme, Figma, Recharts" },
     {
-      title: "Software",
-      items: [
-        "MS Visual Studio · VS Code",
-        "MS SQL Server",
-        "Figma · Postman",
-        "Adobe (Photoshop · Illustrator · After Effects)",
-        "MS Office (Word · Excel · PowerPoint · Outlook · Access)",
-      ],
+      title: "API & Integrations",
+      items: "REST API, OpenAI SDK, Anthropic SDK, Google Places API, Google Routes API, Postman",
     },
+    { title: "Version Control & DevOps", items: "Git, GitHub, Azure DevOps" },
+    { title: "Development Tools", items: "Visual Studio, Visual Studio Code, Cursor" },
   ],
+  certificationsTitle: "Certifications",
+  certifications: [
+    { year: "2024", name: "Applied Figma", issuer: "BTK Akademi" },
+    { year: "2024", name: "Azure DevOps .NET Training", issuer: "BilgeAdam Teknoloji" },
+    { year: "2023", name: "ASP.NET Core Bootcamp", issuer: "BTK Akademi" },
+    { year: "2023", name: "Version Control: Git & GitHub", issuer: "BTK Akademi" },
+    { year: "2023", name: "SQL with Practical Applications", issuer: "BTK Akademi" },
+    { year: "2023", name: "C#", issuer: "BTK Akademi" },
+  ],
+  languagesTitle: "Languages",
+  languages: [{ name: "English", level: "Basic Proficiency" }],
 };
 
 const content = { tr, en };
@@ -221,6 +279,34 @@ export function ResumeContent() {
       </Container>
 
       <Container as="section" className="max-w-[1040px] border-t border-border py-10">
+        <SectionEyebrow className="mb-7">{t.projectsTitle}</SectionEyebrow>
+        <div className="flex flex-col">
+          {t.projects.map((project) => (
+            <div
+              key={project.name}
+              className="grid grid-cols-1 gap-2 border-t border-border py-6 sm:grid-cols-[180px_1fr] sm:gap-8"
+            >
+              <div>
+                <div className="font-heading text-[13px] font-semibold text-title">{project.period}</div>
+                <div className="mt-1 text-[13px] text-body">{project.role}</div>
+              </div>
+              <div>
+                <div className="mb-3 font-heading text-lg font-bold text-title">{project.name}</div>
+                <div className="flex flex-col gap-2 text-sm leading-relaxed text-body">
+                  {project.bullets.map((bullet) => (
+                    <div key={bullet}>{bullet}</div>
+                  ))}
+                </div>
+                <div className="mt-4 text-sm leading-relaxed text-body">
+                  <span className="font-semibold text-title">{t.techLabel}:</span> {project.tech}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+
+      <Container as="section" className="max-w-[1040px] border-t border-border py-10">
         <SectionEyebrow className="mb-7">{t.educationTitle}</SectionEyebrow>
         <div className="flex flex-col">
           {t.education.map((edu) => (
@@ -238,17 +324,42 @@ export function ResumeContent() {
         </div>
       </Container>
 
-      <Container as="section" className="max-w-[1040px] border-t border-border py-10 pb-20">
+      <Container as="section" className="max-w-[1040px] border-t border-border py-10">
         <SectionEyebrow className="mb-7">{t.toolsTitle}</SectionEyebrow>
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
           {t.tools.map((group) => (
             <div key={group.title}>
-              <div className="mb-3.5 font-heading text-[15px] font-bold text-title">{group.title}</div>
-              <div className="flex flex-col gap-2.5 text-sm text-body">
-                {group.items.map((item) => (
-                  <div key={item}>{item}</div>
-                ))}
+              <div className="mb-2 font-heading text-[15px] font-bold text-title">{group.title}</div>
+              <div className="text-sm leading-relaxed text-body">{group.items}</div>
+            </div>
+          ))}
+        </div>
+      </Container>
+
+      <Container as="section" className="max-w-[1040px] border-t border-border py-10">
+        <SectionEyebrow className="mb-7">{t.certificationsTitle}</SectionEyebrow>
+        <div className="flex flex-col">
+          {t.certifications.map((cert) => (
+            <div
+              key={cert.name}
+              className="grid grid-cols-1 gap-1 border-t border-border py-4 sm:grid-cols-[180px_1fr] sm:gap-8"
+            >
+              <div className="font-heading text-[13px] font-semibold text-title">{cert.year}</div>
+              <div>
+                <div className="font-heading text-base font-bold text-title">{cert.name}</div>
+                <div className="text-sm text-body">{cert.issuer}</div>
               </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+
+      <Container as="section" className="max-w-[1040px] border-t border-border py-10 pb-20">
+        <SectionEyebrow className="mb-5">{t.languagesTitle}</SectionEyebrow>
+        <div className="flex flex-col gap-2 text-sm text-body">
+          {t.languages.map((language) => (
+            <div key={language.name}>
+              <span className="font-semibold text-title">{language.name}</span> · {language.level}
             </div>
           ))}
         </div>
